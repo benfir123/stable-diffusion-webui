@@ -5,6 +5,7 @@ import sys
 from functools import reduce
 import warnings
 from contextlib import ExitStack
+from typing import Iterable
 
 import gradio as gr
 import gradio.utils
@@ -1131,7 +1132,15 @@ def create_ui():
     for _interface, label, _ifid in interfaces:
         shared.tab_names.append(label)
 
-    with gr.Blocks(theme=shared.gradio_theme, analytics_enabled=False, title="Stable Diffusion") as demo:
+    custom_theme = gr.themes.Base().set(
+        body_background_fill_dark="#000000",
+        input_background_fill_dark="#FCCB27",
+        input_placeholder_color_dark="#F703CE",
+        loader_color_dark="#F703CE",
+        slider_color_dark="#F703CE",
+    )
+
+    with gr.Blocks(theme=custom_theme, analytics_enabled=False, title="Stable Diffusion") as demo:
         settings.add_quicksettings()
 
         parameters_copypaste.connect_paste_params_buttons()
@@ -1141,7 +1150,7 @@ def create_ui():
             sorted_interfaces = sorted(interfaces, key=lambda x: tab_order.get(x[1], 9999))
 
             for interface, label, ifid in sorted_interfaces:
-                if label in shared.opts.hidden_tabs:
+                if label in shared.opts.hidden_tabs or label not in ['txt2img', 'Settings', 'img2img', 'Extras']:
                     continue
                 with gr.TabItem(label, id=ifid, elem_id=f"tab_{ifid}"):
                     interface.render()

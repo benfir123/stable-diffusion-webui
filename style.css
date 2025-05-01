@@ -227,7 +227,7 @@ input[type="checkbox"].input-accordion-checkbox{
 }
 
 .block.token-counter span{
-    background: var(--input-background-fill) !important;
+    background: #000000 !important;
     box-shadow: 0 0 0.0 0.3em rgba(192,192,192,0.15), inset 0 0 0.6em rgba(192,192,192,0.075);
     border: 2px solid rgba(192,192,192,0.4) !important;
     border-radius: 0.4em;
@@ -1664,4 +1664,38 @@ body.resizing .resize-handle {
 .extra-network-tree .tree-list-content:hover .button-row {
     visibility: visible;
     width: auto;
+}
+
+/* pink: #F703CE */
+/* yellow: #FBCB26 */
+/* black: #000000 */
+
+.dark #txt2img_gallery, #img2img_gallery, #extras_gallery {
+    background-color: #F703CE;
+}
+
+.dark #tabs > .tab-nav > button.selected {
+    color: #F703CE;
+}
+
+.dark #tabs > .tab-nav > button {
+    color: #FBCB26;
+}
+
+.dark #txt2img_extra_tabs > .tab-nav > button.selected {
+    background-color: #F703CE;
+}
+
+.dark .wrap-inner {
+    border: 1px solid var(--block-border-color) !important;
+    border-radius: 8px !important;
+    background-color: #000000;
+}
+
+.dark input[type="number"] {
+    color: #000000 !important;
+}
+
+.dark textarea {
+    color: #000000 !important;
 }
