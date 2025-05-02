@@ -93,6 +93,7 @@ def webui():
                 "redoc_url": "/redoc",
             },
             root_path=f"/{cmd_opts.subpath}" if cmd_opts.subpath else "",
+            favicon_path='favicon.png',
         )
 
         startup_timer.record("gradio launch")

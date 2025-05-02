@@ -1696,6 +1696,38 @@ body.resizing .resize-handle {
     color: #000000 !important;
 }
 
+.dark input[type="checkbox"] {
+    background-color: #F703CE !important;
+    border: 1px solid #F703CE !important;
+}
+
 .dark textarea {
     color: #000000 !important;
+}
+
+.logo-image-button {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746186186/logo_xbjslu.png') !important;
+    background-size: contain;
+    background-color: #000000 !important;
+    max-width: 245px !important;
+    height: 245px !important;
+}
+
+[id*="_generate_box"] {
+    display: flex;
+    justify-content: center;
+}
+
+[id*="_tools"] {
+    display: none !important;
+}
+
+[id*="_styles"] {
+    display: none !important;
+}
+
+.dark label > span {
+    background-color: #F703CE !important;
+    padding: 4px 8px 4px 8px !important;
+    border-radius: 8px !important;
 }
