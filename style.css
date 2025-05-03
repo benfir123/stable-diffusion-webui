@@ -1731,3 +1731,7 @@ body.resizing .resize-handle {
     padding: 4px 8px 4px 8px !important;
     border-radius: 8px !important;
 }
+
+#settings_restart_gradio, #settings_submit {
+    background-color: #F703CE !important;
+}
