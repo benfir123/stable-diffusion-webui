@@ -9,7 +9,7 @@ class ScriptPostprocessingCreateFlippedCopies(scripts_postprocessing.ScriptPostp
     order = 4030
 
     def ui(self):
-        with ui_components.InputAccordion(False, label="Create flipped copies") as enable:
+        with ui_components.InputAccordion(False, label="สร้างตัวกลับด้าน") as enable:
             with gr.Row():
                 option = gr.CheckboxGroup(value=["Horizontal"], choices=["Horizontal", "Vertical", "Both"], show_label=False)
 

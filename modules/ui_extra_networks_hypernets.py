@@ -7,7 +7,7 @@ from modules.hashes import sha256_from_cache
 
 class ExtraNetworksPageHypernetworks(ui_extra_networks.ExtraNetworksPage):
     def __init__(self):
-        super().__init__('Hypernetworks')
+        super().__init__('เครือข่ายเสริม')
 
     def refresh(self):
         shared.reload_hypernetworks()

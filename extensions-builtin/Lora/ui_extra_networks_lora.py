@@ -10,7 +10,7 @@ from ui_edit_user_metadata import LoraUserMetadataEditor
 
 class ExtraNetworksPageLora(ui_extra_networks.ExtraNetworksPage):
     def __init__(self):
-        super().__init__('Lora')
+        super().__init__('การปรับโมเดลแบบ Lora / การปรับโมเดลแบบแรงค์ต่ำ')
 
     def refresh(self):
         networks.list_available_networks()

@@ -6,7 +6,7 @@ from modules.ui_extra_networks import quote_js
 
 class ExtraNetworksPageTextualInversion(ui_extra_networks.ExtraNetworksPage):
     def __init__(self):
-        super().__init__('Textual Inversion')
+        super().__init__('การฝังข้อความ')
         self.allow_negative_prompt = True
 
     def refresh(self):

@@ -10,11 +10,12 @@ class ScriptPostprocessingFocalCrop(scripts_postprocessing.ScriptPostprocessing)
     order = 4010
 
     def ui(self):
-        with ui_components.InputAccordion(False, label="Auto focal point crop") as enable:
-            face_weight = gr.Slider(label='Focal point face weight', value=0.9, minimum=0.0, maximum=1.0, step=0.05, elem_id="postprocess_focal_crop_face_weight")
-            entropy_weight = gr.Slider(label='Focal point entropy weight', value=0.15, minimum=0.0, maximum=1.0, step=0.05, elem_id="postprocess_focal_crop_entropy_weight")
-            edges_weight = gr.Slider(label='Focal point edges weight', value=0.5, minimum=0.0, maximum=1.0, step=0.05, elem_id="postprocess_focal_crop_edges_weight")
-            debug = gr.Checkbox(label='Create debug image', elem_id="train_process_focal_crop_debug")
+        with ui_components.InputAccordion(False, label="ครอบตัดจุดโฟกัสอัตโนมัติ") as enable:
+            face_weight = gr.Slider(label='น้ำหนักจุดโฟกัสใบหน้า', value=0.9, minimum=0.0, maximum=1.0, step=0.05, elem_id="postprocess_focal_crop_face_weight")
+            entropy_weight = gr.Slider(label='น้ำหนักจุดโฟกัสเอนโทรปี', value=0.15, minimum=0.0, maximum=1.0, step=0.05, elem_id="postprocess_focal_crop_entropy_weight")
+            edges_weight = gr.Slider(label='น้ำหนักจุดโฟกัสขอบ', value=0.5, minimum=0.0, maximum=1.0, step=0.05, elem_id="postprocess_focal_crop_edges_weight")
+            debug = gr.Checkbox(label='สร้างภาพดีบัก', elem_id="train_process_focal_crop_debug")
+
 
         return {
             "enable": enable,

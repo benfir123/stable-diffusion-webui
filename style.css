@@ -1732,6 +1732,76 @@ body.resizing .resize-handle {
     border-radius: 8px !important;
 }
 
-#settings_restart_gradio, #settings_submit {
+#settings_restart_gradio, #settings_submit, #ui_defaults_apply {
     background-color: #F703CE !important;
+}
+
+[id*="_send_to_extras"] {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/protractor_u1oqtf.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+#txt2img_upscale {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/star_ronzyx.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+[id*="_send_to_inpaint"] {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/color-wheel_fkpso0.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+[id*="_open_folder"] {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/folder_pwdpfm.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+[id*="_send_to_img2img"] {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/picture_xlwocs.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+#save_img2img, #save_txt2img {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/diskette_eq8eqb.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+[id*="save_zip_"] {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746342978/zip_trkssl.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+#refresh_sd_model_checkpoint {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746344433/loading-arrow_blvg5w.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+#txt2img_reuse_seed, #txt2img_reuse_subseed {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746344433/recycle-symbol_m0lrfq.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+}
+
+#txt2img_random_seed, #txt2img_random_subseed {
+    background-image: url('https://res.cloudinary.com/dbjqbdtc9/image/upload/v1746344433/dice_akx8lx.png') !important;
+    background-size: contain !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
 }
