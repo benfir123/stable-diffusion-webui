@@ -32,21 +32,21 @@ script_callbacks.on_before_ui(before_ui)
 script_callbacks.on_infotext_pasted(networks.infotext_pasted)
 
 
-shared.options_templates.update(shared.options_section(('extra_networks', "Extra Networks"), {
-    "sd_lora": shared.OptionInfo("None", "Add network to prompt", gr.Dropdown, lambda: {"choices": ["None", *networks.available_networks]}, refresh=networks.list_available_networks),
-    "lora_preferred_name": shared.OptionInfo("Alias from file", "When adding to prompt, refer to Lora by", gr.Radio, {"choices": ["Alias from file", "Filename"]}),
-    "lora_add_hashes_to_infotext": shared.OptionInfo(True, "Add Lora hashes to infotext"),
-    "lora_bundled_ti_to_infotext": shared.OptionInfo(True, "Add Lora name as TI hashes for bundled Textual Inversion").info('"Add Textual Inversion hashes to infotext" needs to be enabled'),
-    "lora_show_all": shared.OptionInfo(False, "Always show all networks on the Lora page").info("otherwise, those detected as for incompatible version of Stable Diffusion will be hidden"),
-    "lora_hide_unknown_for_versions": shared.OptionInfo([], "Hide networks of unknown versions for model versions", gr.CheckboxGroup, {"choices": ["SD1", "SD2", "SDXL"]}),
-    "lora_in_memory_limit": shared.OptionInfo(0, "Number of Lora networks to keep cached in memory", gr.Number, {"precision": 0}),
-    "lora_not_found_warning_console": shared.OptionInfo(False, "Lora not found warning in console"),
-    "lora_not_found_gradio_warning": shared.OptionInfo(False, "Lora not found warning popup in webui"),
+shared.options_templates.update(shared.options_section(('extra_networks', "เครือข่ายเพิ่มเติม"), {
+    "sd_lora": shared.OptionInfo("None", "เพิ่มเครือข่ายลงในคำสั่ง", gr.Dropdown, lambda: {"choices": ["None", *networks.available_networks]}, refresh=networks.list_available_networks),
+    "lora_preferred_name": shared.OptionInfo("Alias from file", "เมื่อเพิ่มลงในคำสั่ง, อ้างอิงถึง Lora โดยใช้", gr.Radio, {"choices": ["Alias from file", "Filename"]}),
+    "lora_add_hashes_to_infotext": shared.OptionInfo(True, "เพิ่มแฮชของ Lora ลงใน infotext"),
+    "lora_bundled_ti_to_infotext": shared.OptionInfo(True, "เพิ่มชื่อ Lora เป็น TI hashes สำหรับ Textual Inversion ที่บันเดิล").info('"เพิ่ม Textual Inversion hashes ลงใน infotext" ต้องเปิดใช้งาน'),
+    "lora_show_all": shared.OptionInfo(False, "แสดงทุกเครือข่ายบนหน้า Lora เสมอ").info("ไม่เช่นนั้น, เครือข่ายที่ตรวจพบว่าไม่เข้ากันกับเวอร์ชันของ Stable Diffusion จะถูกซ่อน"),
+    "lora_hide_unknown_for_versions": shared.OptionInfo([], "ซ่อนเครือข่ายสำหรับเวอร์ชันที่ไม่รู้จักสำหรับรุ่นของโมเดล", gr.CheckboxGroup, {"choices": ["SD1", "SD2", "SDXL"]}),
+    "lora_in_memory_limit": shared.OptionInfo(0, "จำนวนเครือข่าย Lora ที่เก็บในแคชในหน่วยความจำ", gr.Number, {"precision": 0}),
+    "lora_not_found_warning_console": shared.OptionInfo(False, "แสดงคำเตือน Lora ไม่พบในคอนโซล"),
+    "lora_not_found_gradio_warning": shared.OptionInfo(False, "แสดงคำเตือน Lora ไม่พบในหน้าต่างป๊อปอัพของเว็บ UI"),
 }))
 
 
-shared.options_templates.update(shared.options_section(('compatibility', "Compatibility"), {
-    "lora_functional": shared.OptionInfo(False, "Lora/Networks: use old method that takes longer when you have multiple Loras active and produces same results as kohya-ss/sd-webui-additional-networks extension"),
+shared.options_templates.update(shared.options_section(('compatibility', "ความเข้ากันได้"), {
+    "lora_functional": shared.OptionInfo(False, "Lora/เครือข่าย: ใช้วิธีเก่าที่ใช้เวลานานเมื่อมี Lora หลายตัวที่ทำงานพร้อมกันและให้ผลลัพธ์เหมือนกับส่วนขยาย kohya-ss/sd-webui-additional-networks"),
 }))
 
 

@@ -81,22 +81,21 @@ def on_ui_settings():
     import gradio as gr
 
     options = {
-        "hypertile_explanation": shared.OptionHTML("""
-    <a href='https://github.com/tfernd/HyperTile'>Hypertile</a> optimizes the self-attention layer within U-Net and VAE models,
-    resulting in a reduction in computation time ranging from 1 to 4 times. The larger the generated image is, the greater the
-    benefit.
+    "hypertile_explanation": shared.OptionHTML("""
+<a href='https://github.com/tfernd/HyperTile'>Hypertile</a> ปรับปรุงชั้น self-attention ภายในโมเดล U-Net และ VAE,
+ทำให้เวลาในการคำนวณลดลงตั้งแต่ 1 ถึง 4 เท่า ยิ่งขนาดของภาพที่สร้างขึ้นใหญ่ขึ้น, ผลประโยชน์ก็จะยิ่งมากขึ้น
     """),
 
-        "hypertile_enable_unet": shared.OptionInfo(False, "Enable Hypertile U-Net", infotext="Hypertile U-Net").info("enables hypertile for all modes, including hires fix second pass; noticeable change in details of the generated picture"),
-        "hypertile_enable_unet_secondpass": shared.OptionInfo(False, "Enable Hypertile U-Net for hires fix second pass", infotext="Hypertile U-Net second pass").info("enables hypertile just for hires fix second pass - regardless of whether the above setting is enabled"),
-        "hypertile_max_depth_unet": shared.OptionInfo(3, "Hypertile U-Net max depth", gr.Slider, {"minimum": 0, "maximum": 3, "step": 1}, infotext="Hypertile U-Net max depth").info("larger = more neural network layers affected; minor effect on performance"),
-        "hypertile_max_tile_unet": shared.OptionInfo(256, "Hypertile U-Net max tile size", gr.Slider, {"minimum": 0, "maximum": 512, "step": 16}, infotext="Hypertile U-Net max tile size").info("larger = worse performance"),
-        "hypertile_swap_size_unet": shared.OptionInfo(3, "Hypertile U-Net swap size", gr.Slider, {"minimum": 0, "maximum": 64, "step": 1}, infotext="Hypertile U-Net swap size"),
-        "hypertile_enable_vae": shared.OptionInfo(False, "Enable Hypertile VAE", infotext="Hypertile VAE").info("minimal change in the generated picture"),
-        "hypertile_max_depth_vae": shared.OptionInfo(3, "Hypertile VAE max depth", gr.Slider, {"minimum": 0, "maximum": 3, "step": 1}, infotext="Hypertile VAE max depth"),
-        "hypertile_max_tile_vae": shared.OptionInfo(128, "Hypertile VAE max tile size", gr.Slider, {"minimum": 0, "maximum": 512, "step": 16}, infotext="Hypertile VAE max tile size"),
-        "hypertile_swap_size_vae": shared.OptionInfo(3, "Hypertile VAE swap size ", gr.Slider, {"minimum": 0, "maximum": 64, "step": 1}, infotext="Hypertile VAE swap size"),
-    }
+    "hypertile_enable_unet": shared.OptionInfo(False, "เปิดใช้งาน Hypertile U-Net", infotext="Hypertile U-Net").info("เปิดใช้งาน hypertile สำหรับทุกโหมด รวมถึงการแก้ไข hires fix second pass; การเปลี่ยนแปลงที่เห็นได้ชัดในรายละเอียดของภาพที่สร้างขึ้น"),
+    "hypertile_enable_unet_secondpass": shared.OptionInfo(False, "เปิดใช้งาน Hypertile U-Net สำหรับการแก้ไข hires fix second pass", infotext="Hypertile U-Net second pass").info("เปิดใช้งาน hypertile สำหรับการแก้ไข hires fix second pass เท่านั้น - ไม่ขึ้นอยู่กับการตั้งค่าด้านบน"),
+    "hypertile_max_depth_unet": shared.OptionInfo(3, "ความลึกสูงสุดของ Hypertile U-Net", gr.Slider, {"minimum": 0, "maximum": 3, "step": 1}, infotext="ความลึกสูงสุดของ Hypertile U-Net").info("ค่าใหญ่ขึ้น = จะมีชั้นของเครือข่ายประสาทมากขึ้นที่ได้รับผลกระทบ; ผลกระทบต่อประสิทธิภาพจะน้อย"),
+    "hypertile_max_tile_unet": shared.OptionInfo(256, "ขนาดสูงสุดของ Tile ใน Hypertile U-Net", gr.Slider, {"minimum": 0, "maximum": 512, "step": 16}, infotext="ขนาดสูงสุดของ Tile ใน Hypertile U-Net").info("ค่าใหญ่ขึ้น = ประสิทธิภาพจะลดลง"),
+    "hypertile_swap_size_unet": shared.OptionInfo(3, "ขนาดการสลับของ Hypertile U-Net", gr.Slider, {"minimum": 0, "maximum": 64, "step": 1}, infotext="ขนาดการสลับของ Hypertile U-Net"),
+    "hypertile_enable_vae": shared.OptionInfo(False, "เปิดใช้งาน Hypertile VAE", infotext="Hypertile VAE").info("การเปลี่ยนแปลงที่เกิดขึ้นในภาพที่สร้างขึ้นจะน้อย"),
+    "hypertile_max_depth_vae": shared.OptionInfo(3, "ความลึกสูงสุดของ Hypertile VAE", gr.Slider, {"minimum": 0, "maximum": 3, "step": 1}, infotext="ความลึกสูงสุดของ Hypertile VAE"),
+    "hypertile_max_tile_vae": shared.OptionInfo(128, "ขนาดสูงสุดของ Tile ใน Hypertile VAE", gr.Slider, {"minimum": 0, "maximum": 512, "step": 16}, infotext="ขนาดสูงสุดของ Tile ใน Hypertile VAE"),
+    "hypertile_swap_size_vae": shared.OptionInfo(3, "ขนาดการสลับของ Hypertile VAE", gr.Slider, {"minimum": 0, "maximum": 64, "step": 1}, infotext="ขนาดการสลับของ Hypertile VAE"),
+}
 
     for name, opt in options.items():
         opt.section = ('hypertile', "Hypertile")

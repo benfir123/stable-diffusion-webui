@@ -443,33 +443,33 @@ def get_gaussian_kernel(stddev_radius=1.0, max_radius=2):
 
 default = SoftInpaintingSettings(1, 0.5, 4, 0, 0.5, 2)
 
-enabled_ui_label = "Soft inpainting"
-enabled_gen_param_label = "Soft inpainting enabled"
+enabled_ui_label = "การวาดในสไตล์นุ่มนวล"
+enabled_gen_param_label = "เปิดการใช้งานการวาดในสไตล์นุ่มนวล"
 enabled_el_id = "soft_inpainting_enabled"
 
 ui_labels = SoftInpaintingSettings(
-    "Schedule bias",
-    "Preservation strength",
-    "Transition contrast boost",
-    "Mask influence",
-    "Difference threshold",
-    "Difference contrast")
+    "การจัดตารางการเบี่ยงเบน",
+    "ความแข็งแรงในการรักษา",
+    "การเพิ่มคอนทราสต์ของการเปลี่ยนแปลง",
+    "อิทธิพลของมาสก์",
+    "เกณฑ์ความแตกต่าง",
+    "คอนทราสต์ความแตกต่าง")
 
 ui_info = SoftInpaintingSettings(
-    "Shifts when preservation of original content occurs during denoising.",
-    "How strongly partially masked content should be preserved.",
-    "Amplifies the contrast that may be lost in partially masked regions.",
-    "How strongly the original mask should bias the difference threshold.",
-    "How much an image region can change before the original pixels are not blended in anymore.",
-    "How sharp the transition should be between blended and not blended.")
+    "การเปลี่ยนแปลงเมื่อรักษาคอนเทนต์ต้นฉบับเกิดขึ้นระหว่างการลดสัญญาณรบกวน.",
+    "ความแข็งแรงในการรักษาคอนเทนต์ที่ถูกมาสก์บางส่วน.",
+    "การเพิ่มคอนทราสต์ที่อาจสูญหายไปในพื้นที่ที่มาสก์บางส่วน.",
+    "อิทธิพลของมาสก์ต้นฉบับที่มีต่อเกณฑ์ความแตกต่าง.",
+    "พื้นที่ในภาพที่สามารถเปลี่ยนแปลงได้มากน้อยแค่ไหนก่อนที่จะไม่ผสมพิกเซลต้นฉบับอีกต่อไป.",
+    "ความคมชัดของการเปลี่ยนแปลงระหว่างส่วนที่ผสมและส่วนที่ไม่ผสม.")
 
 gen_param_labels = SoftInpaintingSettings(
-    "Soft inpainting schedule bias",
-    "Soft inpainting preservation strength",
-    "Soft inpainting transition contrast boost",
-    "Soft inpainting mask influence",
-    "Soft inpainting difference threshold",
-    "Soft inpainting difference contrast")
+    "การจัดตารางการเบี่ยงเบนในการวาดในสไตล์นุ่มนวล",
+    "ความแข็งแรงในการรักษาการวาดในสไตล์นุ่มนวล",
+    "การเพิ่มคอนทราสต์ของการเปลี่ยนแปลงในการวาดในสไตล์นุ่มนวล",
+    "อิทธิพลของมาสก์ในการวาดในสไตล์นุ่มนวล",
+    "เกณฑ์ความแตกต่างในการวาดในสไตล์นุ่มนวล",
+    "คอนทราสต์ความแตกต่างในการวาดในสไตล์นุ่มนวล")
 
 el_ids = SoftInpaintingSettings(
     "mask_blend_power",

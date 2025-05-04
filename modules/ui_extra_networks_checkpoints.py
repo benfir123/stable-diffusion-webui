@@ -7,7 +7,7 @@ from modules.ui_extra_networks_checkpoints_user_metadata import CheckpointUserMe
 
 class ExtraNetworksPageCheckpoints(ui_extra_networks.ExtraNetworksPage):
     def __init__(self):
-        super().__init__('Checkpoints')
+        super().__init__('จุดตรวจโมเดล / โมเดลเช็คพอยต์')
 
         self.allow_prompt = False
 

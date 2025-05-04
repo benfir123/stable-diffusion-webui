@@ -69,14 +69,14 @@ class ExtraOptionsSection(scripts.Script):
                 p.override_settings[name] = value
 
 
-shared.options_templates.update(shared.options_section(('settings_in_ui', "Settings in UI", "ui"), {
+shared.options_templates.update(shared.options_section(('settings_in_ui', "การตั้งค่าใน UI", "ui"), {
     "settings_in_ui": shared.OptionHTML("""
-This page allows you to add some settings to the main interface of txt2img and img2img tabs.
+หน้านี้ช่วยให้คุณสามารถเพิ่มการตั้งค่าบางอย่างในอินเตอร์เฟสหลักของแท็บ txt2img และ img2img
 """),
-    "extra_options_txt2img": shared.OptionInfo([], "Settings for txt2img", ui_components.DropdownMulti, lambda: {"choices": list(shared.opts.data_labels.keys())}).js("info", "settingsHintsShowQuicksettings").info("setting entries that also appear in txt2img interfaces").needs_reload_ui(),
-    "extra_options_img2img": shared.OptionInfo([], "Settings for img2img", ui_components.DropdownMulti, lambda: {"choices": list(shared.opts.data_labels.keys())}).js("info", "settingsHintsShowQuicksettings").info("setting entries that also appear in img2img interfaces").needs_reload_ui(),
-    "extra_options_cols": shared.OptionInfo(1, "Number of columns for added settings", gr.Slider, {"step": 1, "minimum": 1, "maximum": 20}).info("displayed amount will depend on the actual browser window width").needs_reload_ui(),
-    "extra_options_accordion": shared.OptionInfo(False, "Place added settings into an accordion").needs_reload_ui()
+    "extra_options_txt2img": shared.OptionInfo([], "การตั้งค่าสำหรับ txt2img", ui_components.DropdownMulti, lambda: {"choices": list(shared.opts.data_labels.keys())}).js("info", "settingsHintsShowQuicksettings").info("การตั้งค่าที่ปรากฏในอินเตอร์เฟสของ txt2img ด้วย").needs_reload_ui(),
+    "extra_options_img2img": shared.OptionInfo([], "การตั้งค่าสำหรับ img2img", ui_components.DropdownMulti, lambda: {"choices": list(shared.opts.data_labels.keys())}).js("info", "settingsHintsShowQuicksettings").info("การตั้งค่าที่ปรากฏในอินเตอร์เฟสของ img2img ด้วย").needs_reload_ui(),
+    "extra_options_cols": shared.OptionInfo(1, "จำนวนคอลัมน์สำหรับการตั้งค่าที่เพิ่มเข้าไป", gr.Slider, {"step": 1, "minimum": 1, "maximum": 20}).info("จำนวนที่แสดงขึ้นอยู่กับความกว้างของหน้าต่างเบราว์เซอร์จริง").needs_reload_ui(),
+    "extra_options_accordion": shared.OptionInfo(False, "วางการตั้งค่าที่เพิ่มเข้าไปในรูปแบบ Accordion").needs_reload_ui()
 }))
 
 

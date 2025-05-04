@@ -119,9 +119,9 @@ class UiSettings:
         with gr.Blocks(analytics_enabled=False) as settings_interface:
             with gr.Row():
                 with gr.Column(scale=6):
-                    self.submit = gr.Button(value="Apply settings", variant='primary', elem_id="settings_submit")
+                    self.submit = gr.Button(value="เซฟการตั้งค่า", variant='primary', elem_id="settings_submit")
                 with gr.Column():
-                    restart_gradio = gr.Button(value='Reload UI', variant='primary', elem_id="settings_restart_gradio")
+                    restart_gradio = gr.Button(value='โหลด UI ใหม่', variant='primary', elem_id="settings_restart_gradio")
 
             self.result = gr.HTML(elem_id="settings_result")
 
@@ -166,10 +166,10 @@ class UiSettings:
                     current_row.__exit__()
                     current_tab.__exit__()
 
-                with gr.TabItem("Defaults", id="defaults", elem_id="settings_tab_defaults"):
+                with gr.TabItem("ค่าเริ่มต้น", id="defaults", elem_id="settings_tab_defaults"):
                     loadsave.create_ui()
 
-                with gr.TabItem("Sysinfo", id="sysinfo", elem_id="settings_tab_sysinfo"):
+                with gr.TabItem("ข้อมูลระบบ", id="sysinfo", elem_id="settings_tab_sysinfo"):
                     gr.HTML('<a href="./internal/sysinfo-download" class="sysinfo_big_link" download>Download system info</a><br /><a href="./internal/sysinfo" target="_blank">(or open as text in a new page)</a>', elem_id="sysinfo_download")
 
                     with gr.Row():
@@ -180,7 +180,7 @@ class UiSettings:
                         with gr.Column(scale=100):
                             pass
 
-                with gr.TabItem("Actions", id="actions", elem_id="settings_tab_actions"):
+                with gr.TabItem("แอคชั่น", id="actions", elem_id="settings_tab_actions"):
                     request_notifications = gr.Button(value='Request browser notifications', elem_id="request_notifications")
                     download_localization = gr.Button(value='Download localization template', elem_id="download_localization")
                     reload_script_bodies = gr.Button(value='Reload custom script bodies (No ui updates, No restart)', variant='secondary', elem_id="settings_reload_script_bodies")
@@ -191,14 +191,14 @@ class UiSettings:
                         calculate_all_checkpoint_hash = gr.Button(value='Calculate hash for all checkpoint', elem_id="calculate_all_checkpoint_hash")
                         calculate_all_checkpoint_hash_threads = gr.Number(value=1, label="Number of parallel calculations", elem_id="calculate_all_checkpoint_hash_threads", precision=0, minimum=1)
 
-                with gr.TabItem("Licenses", id="licenses", elem_id="settings_tab_licenses"):
+                with gr.TabItem("ใบอนุญาต", id="licenses", elem_id="settings_tab_licenses"):
                     gr.HTML(shared.html("licenses.html"), elem_id="licenses")
 
-                self.show_all_pages = gr.Button(value="Show all pages", elem_id="settings_show_all_pages")
+                self.show_all_pages = gr.Button(value="แสดงทุกหน้า", elem_id="settings_show_all_pages")
                 self.show_one_page = gr.Button(value="Show only one page", elem_id="settings_show_one_page", visible=False)
                 self.show_one_page.click(lambda: None)
 
-                self.search_input = gr.Textbox(value="", elem_id="settings_search", max_lines=1, placeholder="Search...", show_label=False)
+                self.search_input = gr.Textbox(value="", elem_id="settings_search", max_lines=1, placeholder="ค้นหา...", show_label=False)
 
                 self.text_settings = gr.Textbox(elem_id="settings_json", value=lambda: opts.dumpjson(), visible=False)
 

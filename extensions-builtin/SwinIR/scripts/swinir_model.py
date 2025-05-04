@@ -87,9 +87,9 @@ class UpscalerSwinIR(Upscaler):
 def on_ui_settings():
     import gradio as gr
 
-    shared.opts.add_option("SWIN_tile", shared.OptionInfo(192, "Tile size for all SwinIR.", gr.Slider, {"minimum": 16, "maximum": 512, "step": 16}, section=('upscaling', "Upscaling")))
-    shared.opts.add_option("SWIN_tile_overlap", shared.OptionInfo(8, "Tile overlap, in pixels for SwinIR. Low values = visible seam.", gr.Slider, {"minimum": 0, "maximum": 48, "step": 1}, section=('upscaling', "Upscaling")))
-    shared.opts.add_option("SWIN_torch_compile", shared.OptionInfo(False, "Use torch.compile to accelerate SwinIR.", gr.Checkbox, {"interactive": True}, section=('upscaling', "Upscaling")).info("Takes longer on first run"))
+    shared.opts.add_option("SWIN_tile", shared.OptionInfo(192, "ขนาดของ Tile สำหรับ SwinIR ทุกตัว.", gr.Slider, {"minimum": 16, "maximum": 512, "step": 16}, section=('upscaling', "Upscaling")))
+    shared.opts.add_option("SWIN_tile_overlap", shared.OptionInfo(8, "การทับซ้อนของ Tile สำหรับ SwinIR, หน่วยเป็นพิกเซล. ค่าต่ำ = รอยต่อที่มองเห็นได้.", gr.Slider, {"minimum": 0, "maximum": 48, "step": 1}, section=('upscaling', "Upscaling")))
+    shared.opts.add_option("SWIN_torch_compile", shared.OptionInfo(False, "ใช้ torch.compile เพื่อเร่งความเร็วของ SwinIR.", gr.Checkbox, {"interactive": True}, section=('upscaling', "Upscaling")).info("ใช้เวลานานขึ้นในการทำงานครั้งแรก"))
 
 
 script_callbacks.on_ui_settings(on_ui_settings)

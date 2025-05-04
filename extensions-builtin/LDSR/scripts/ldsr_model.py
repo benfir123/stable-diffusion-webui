@@ -61,8 +61,8 @@ class UpscalerLDSR(Upscaler):
 def on_ui_settings():
     import gradio as gr
 
-    shared.opts.add_option("ldsr_steps", shared.OptionInfo(100, "LDSR processing steps. Lower = faster", gr.Slider, {"minimum": 1, "maximum": 200, "step": 1}, section=('upscaling', "Upscaling")))
-    shared.opts.add_option("ldsr_cached", shared.OptionInfo(False, "Cache LDSR model in memory", gr.Checkbox, {"interactive": True}, section=('upscaling', "Upscaling")))
+    shared.opts.add_option("ldsr_steps", shared.OptionInfo(100, "ขั้นตอนการประมวลผล LDSR จำนวนต่ำ = เร็วขึ้น", gr.Slider, {"minimum": 1, "maximum": 200, "step": 1}, section=('upscaling', "การขยายภาพ")))
+    shared.opts.add_option("ldsr_cached", shared.OptionInfo(False, "แคชโมเดล LDSR ในหน่วยความจำ", gr.Checkbox, {"interactive": True}, section=('upscaling', "การขยายภาพ")))
 
 
 script_callbacks.on_ui_settings(on_ui_settings)
