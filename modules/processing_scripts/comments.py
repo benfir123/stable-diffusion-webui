@@ -44,6 +44,13 @@ def before_token_counter(params: script_callbacks.BeforeTokenCounterParams):
 script_callbacks.on_before_token_counter(before_token_counter)
 
 
-shared.options_templates.update(shared.options_section(('sd', "Stable Diffusion", "sd"), {
-    "enable_prompt_comments": shared.OptionInfo(True, "Enable comments").info("Use # anywhere in the prompt to hide the text between # and the end of the line from the generation."),
-}))
+shared.options_templates.update(
+    shared.options_section(
+        ('sd', "SIIN AI", "sd"),
+        {
+            "enable_prompt_comments": shared.OptionInfo(True, "Enable comments").info(
+                "Use # anywhere in the prompt to hide the text between # and the end of the line from the generation."
+            ),
+        },
+    )
+)
