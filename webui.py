@@ -34,6 +34,7 @@ def api_only():
     api = create_api(app)
 
     from modules import script_callbacks
+
     script_callbacks.before_ui_callback()
     script_callbacks.app_started_callback(None, app)
 
@@ -41,7 +42,7 @@ def api_only():
     api.launch(
         server_name=initialize_util.gradio_server_name(),
         port=cmd_opts.port if cmd_opts.port else 7861,
-        root_path=f"/{cmd_opts.subpath}" if cmd_opts.subpath else ""
+        root_path=f"/{cmd_opts.subpath}" if cmd_opts.subpath else "",
     )
 
 
@@ -94,6 +95,7 @@ def webui():
             },
             root_path=f"/{cmd_opts.subpath}" if cmd_opts.subpath else "",
             favicon_path='favicon.png',
+            auth_message="Welcome to SIIN AI. Please log in to continue.",
         )
 
         startup_timer.record("gradio launch")
