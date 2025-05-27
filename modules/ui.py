@@ -2001,6 +2001,7 @@ def create_ui():
         input_placeholder_color_dark="#F703CE",
         loader_color_dark="#F703CE",
         slider_color_dark="#F703CE",
+        button_primary_background_fill_dark="#F703CE",
     )
 
     with gr.Blocks(theme=custom_theme, analytics_enabled=False, title="SIIN AI") as demo:
