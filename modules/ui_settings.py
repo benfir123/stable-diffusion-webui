@@ -120,8 +120,6 @@ class UiSettings:
             with gr.Row():
                 with gr.Column(scale=6):
                     self.submit = gr.Button(value="เซฟการตั้งค่า", variant='primary', elem_id="settings_submit")
-                with gr.Column():
-                    restart_gradio = gr.Button(value='โหลด UI ใหม่', variant='primary', elem_id="settings_restart_gradio")
 
             self.result = gr.HTML(elem_id="settings_result")
 
@@ -246,13 +244,6 @@ class UiSettings:
                 fn=reload_scripts,
                 inputs=[],
                 outputs=[]
-            )
-
-            restart_gradio.click(
-                fn=shared.state.request_restart,
-                _js='restart_reload',
-                inputs=[],
-                outputs=[],
             )
 
             def check_file(x):
